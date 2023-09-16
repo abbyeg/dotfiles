@@ -1,8 +1,6 @@
 
 # .always_forget.txt
 #
-# awdeorio's UNIX cheat sheet
-#
 # Abby Grobbel <aegrobbel@gmail.com>
 
 ########################################
