@@ -32,5 +32,48 @@ tmux kill-session -t NAME  # kill session NAME
 [tmux] C-b 0               # select window 0
 [tmux] C-b n               # next window
 [tmux] C-b p               # previous window
+[tmux] C-b "               # horizontal split
+[tmux] C-b %               # vertical split
 
+########################################
+# MongoDB
+
+Installed via homebrew
+
+brew services start mongodb/brew/mongodb-community      # start the db
+brew services stop mongodb-community@7.0                # stop the db
+mongod --config /opt/homebrew/etc/mongod.conf --fork    # to run manually as a background process
+
+## Connect to the DB
+mongosh                    # connect to the running instance via a new terminal
+
+
+########################################
+# Postgres
+
+Installed via homebrew
+
+To start postgresql@15 now and restart at login:
+  brew services start postgresql@15
+Or, if you don't want/need a background service you can just run:
+  LC_ALL="C" /opt/homebrew/opt/postgresql@15/bin/postgres -D /opt/homebrew/var/postgresql@15
+
+## Databases
+
+\l                        # List Databases
+
+## Tables
+
+\d TABLE_NAME             # show table
+\d+ TABLE_NAME            # show details
+\dt                       # List tables from current schema
+\dt *.*                   # List tables from all schemas
+\dt <name-of-schema>.*    # List tables for a schema
+
+
+Logon
+psql -U <user> <database_name>
+
+Quit
+\q                        # Exit psql prompt
 
